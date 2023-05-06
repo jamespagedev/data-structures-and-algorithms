@@ -15,7 +15,7 @@ var insertIntoSortedArr = function (arr, num, start, end) {
   } else if (pivot === 1 && num < arr[pivot] && num <= arr[pivot - 1]) {
     arr.splice(0, 0, num);
     return;
-  } else if (pivot === 1 && num > arr[pivot]) {
+  } else if (pivot === 1 && num > arr[pivot] && num < arr[pivot + 1]) {
     arr.splice(pivot + 1, 0, num);
     return;
   } else if (pivot === arr.length - 1 && num < arr[pivot]) {
@@ -137,3 +137,19 @@ console.log("arr1:", arr23);
 const arr24 = [2, 4];
 insertIntoSortedArr(arr24, 5, 0, arr24.length - 1); // [ 2, 4, 5 ]
 console.log("arr1:", arr24);
+
+const arr25 = [1, 18, 34];
+insertIntoSortedArr(arr25, 50, 0, arr25.length - 1); // [1, 18, 34, 50]
+console.log("arr1:", arr25);
+
+const arr26 = [1, 18, 50];
+insertIntoSortedArr(arr26, 34, 0, arr26.length - 1); // [1, 18, 34, 50]
+console.log("arr1:", arr26);
+
+const arr27 = [18, 34, 50];
+insertIntoSortedArr(arr27, 1, 0, arr27.length - 1); // [1, 18, 34, 50]
+console.log("arr1:", arr27);
+
+const arr28 = [1, 34, 50];
+insertIntoSortedArr(arr28, 18, 0, arr28.length - 1); // [1, 18, 34, 50]
+console.log("arr1:", arr28);
