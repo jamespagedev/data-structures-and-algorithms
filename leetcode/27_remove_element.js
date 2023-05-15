@@ -53,8 +53,6 @@ var removeElement = function (nums, val) {
       nums.pop();
       r--;
     } else if (nums[l] === val) {
-      const temp = nums[l];
-      nums[l] = nums[r];
       nums[r] = temp;
       nums.pop();
       l++;
